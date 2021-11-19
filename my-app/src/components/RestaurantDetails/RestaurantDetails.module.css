@@ -1,0 +1,415 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.BackgroundContainer {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.Loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.BackgroundContainer .MainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.MainContainer .RestaurantContainer {
+  display: flex;
+  width: 100%;
+  background-image: url('https://res.cloudinary.com/dppqkea7f/image/upload/v1626142265/Rectaurant-background_hkp8tj.png');
+  background-size: cover;
+  height: 250px;
+}
+
+.RestaurantContainer .img {
+  width: 170px;
+  height: 180px;
+  border-bottom-left-radius: 85px;
+  border-bottom-right-radius: 85px;
+  border-top-right-radius: 85px;
+}
+.RestaurantContainer .DetailsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  margin-left: 10px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 4px;
+  padding-top: 4px;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.DetailsContainer .Name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+}
+.DetailsContainer .Cuisine {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 10px;
+  color: #ffffff;
+}
+.DetailsContainer .Location {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+}
+
+.DetailsContainer .RatingAndCostContainer {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+.RatingAndCostContainer .RatingsContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 30px;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.RatingsContainer .Reviews {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  box-sizing: border-box;
+  margin-right: 6px;
+}
+.RatingAndCostContainer .CostContainer {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  max-height: 30px;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.CostContainer .CostPara {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+.RatingsContainer .Ratings {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  height: fit-content;
+  margin-top: 5px;
+}
+
+.CostContainer .Cost {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  height: fit-content;
+  margin-top: 5px;
+}
+
+.Ratings .Star {
+  height: 14px;
+  width: 14px;
+  left: 169px;
+  top: 186px;
+  border-radius: 0px;
+  color: #ffffff;
+}
+.Ratings .RatingPara {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  margin-left: 3px;
+  box-sizing: content-box;
+}
+
+.Cost .Rupee {
+  height: 14px;
+  width: 14px;
+  border-radius: 0px;
+  color: #ffffff;
+}
+.Cost .CostForTwo {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-left: 3px;
+  box-sizing: content-box;
+}
+.VerticalLine {
+  width: 1px;
+  border-left: 1px solid #ffffff;
+  height: 50px;
+  color: none;
+}
+
+.MainContainer .FoodItemsContainer {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.FoodItemsContainer .ListItem {
+  display: flex;
+  align-items: center;
+  width: 330px;
+  height: 180px;
+  margin-bottom: 6px;
+  justify-content: flex-start;
+  margin-right: 6px;
+  padding-right: 3px;
+  margin-left: 0;
+}
+.FoodItemsContainer .ListItem .RestaurantImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  margin-right: 7px;
+}
+.ListItem .ItemDetails {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-left: 8px;
+  min-height: 150px;
+}
+.ListItem .ItemDetails .ItemName {
+  font-size: 16px;
+  color: #334155;
+  font-weight: 700;
+  font-family: DM sans;
+  font-style: normal;
+  font-family: DM Sans;
+  line-height: 20px;
+  letter-spacing: 0.200000000298023224px;
+  text-align: left;
+}
+.ListItem .ItemDetails .ItemCost {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 10px;
+  color: #334155;
+  text-align: center;
+}
+.ItemDetails .ItemRatingContainer {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  justify-content: space-between;
+  height: fit-content;
+}
+.ItemDetails .ItemRatingContainer .ItemStar {
+  height: 14px;
+  width: 14px;
+  color: #ffcc00;
+}
+.ItemDetails .ItemRatingContainer .ItemRatingText {
+  height: 18px;
+  width: 22px;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.ItemDetails .AddButton {
+  position: static;
+  width: 50px;
+  height: 25px;
+
+  /* Action / Button / Small */
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  /* or 133% */
+  color: #ffa412;
+  border: 1px solid #ffa412;
+  border-radius: 5px;
+}
+.ItemDetails .ItemRateContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ItemRupee {
+  height: 16px;
+  width: 16px;
+  border-radius: 0px;
+}
+
+@media screen and (min-width: 767px) {
+  .BackgroundContainer .MainContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+  }
+  .MainContainer .RestaurantContainer {
+    height: 350px;
+    padding: 26px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .RestaurantContainer .img {
+    width: 370px;
+    height: 280px;
+    border-radius: 8px;
+  }
+  .RestaurantContainer .DetailsContainer {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin-left: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-left: 4px;
+    padding-top: 4px;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .DetailsContainer .RatingAndCostContainer {
+    display: flex;
+    height: fit-content;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+  .RatingAndCostContainer .RatingsContainer {
+    display: flex;
+    flex-direction: column;
+    max-height: 50px;
+    justify-content: center;
+    margin-top: 5px;
+    width: 120px;
+  }
+  .RatingAndCostContainer .CostContainer {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    max-height: 50px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 8px;
+    width: 120px;
+    padding-left: 26px;
+  }
+  .DetailsContainer .Name {
+    font-size: 36px;
+    line-height: 30px;
+  }
+  .DetailsContainer .Cuisine {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .DetailsContainer .Location {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .Ratings .Star {
+    height: 16px;
+    width: 16px;
+  }
+  .Ratings .RatingPara {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .RatingsContainer .Reviews {
+    font-size: 14px;
+    color: #ffffff;
+    box-sizing: border-box;
+    margin-right: 6px;
+  }
+  .CostContainer .CostPara {
+    font-size: 14px;
+  }
+  .Cost .CostForTwo {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .Cost .Rupee {
+    height: 16px;
+    width: 16px;
+  }
+  .FoodItemsContainer .ListItem {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 220px;
+  }
+  .FoodItemsContainer .ListItem .RestaurantImage {
+    width: 200px;
+    height: 150px;
+    border-radius: 8px;
+    margin-right: 7px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .MainContainer .FoodItemsContainer {
+    list-style-type: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .MainContainer .FoodItemsContainer {
+    list-style-type: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
