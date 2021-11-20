@@ -18,11 +18,12 @@ const cartStatusConstants = {
 }
 
 class CartRoute extends Component {
-  state = {cartData: [], cartStatus: cartStatusConstants.initial}
+  state = {cartData: [], cartStatus: cartStatusConstants.initial,loadFooter:false,cartRouteMounted:false}
 
   componentDidMount() {
     window.scrollTo(0, 0)
     this.getTheCartData()
+    this.setState({cartRouteMounted:true})
   }
 
   // increment the cart quantity
@@ -97,7 +98,7 @@ class CartRoute extends Component {
         cartStatus: cartStatusConstants.noCartItems,
       })
     } else {
-      this.setState({cartStatus: cartStatusConstants.cartItemsFound, cartData})
+      this.setState({cartStatus: cartStatusConstants.cartItemsFound, cartData,loadFooter:true})
     }
   }
 
@@ -161,6 +162,7 @@ class CartRoute extends Component {
     const cartData = JSON.parse(localStorage.getItem('cart_data'))
     // console.log(cartData)
     const totalAmount = this.calculateTheTotalAmount()
+    const{loadFooter}=this.state
     return (
       <>
         <div className={cartClass.CartContainer}>
@@ -198,7 +200,7 @@ class CartRoute extends Component {
               Place Order
             </button>
           </div>
-          <Footer />
+         {loadFooter && <Footer />} 
         </div>
       </>
     )
@@ -223,9 +225,10 @@ class CartRoute extends Component {
 
   render() {
     window.scrollTo(0, 0)
+    const{cartRouteMounted}=this.state
     return (
       <div>
-        <NavBar />
+        <NavBar isCartRouteMounted={cartRouteMounted}/>
         <div className={cartClass.CartBackgroundContainer}>
           {this.onRenderDisplayCartPage()}
         </div>

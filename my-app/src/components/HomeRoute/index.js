@@ -53,6 +53,8 @@ class HomeRoute extends Component {
     activePage: 1,
     allRestaurants: [],
     searchInput: '',
+    loadFooter:false,
+    homeRouteMounted:false
   }
 
   // component did Mount method
@@ -61,6 +63,7 @@ class HomeRoute extends Component {
     window.scrollTo(0, 0)
     this.getCarouselData()
     this.getAllRestaurantsData()
+    this.setState({homeRouteMounted:true})
   }
 
   // convert snake case to camel case
@@ -155,7 +158,7 @@ class HomeRoute extends Component {
       // console.log(convertedRestaurants)
       this.setState({
         restaurantApiStatus: restaurantsApiStatusConstants.success,
-        allRestaurants: convertedRestaurants,
+        allRestaurants: convertedRestaurants,loadFooter:true
       })
     } else if (response.ok === false) {
       this.setState({
@@ -343,17 +346,18 @@ class HomeRoute extends Component {
   // rendering the home route in  render method
 
   render() {
+    const {loadFooter,homeRouteMounted}=this.state
     return (
       <>
         <div className={classes.HomeContainer}>
-          <NavBar />
+          <NavBar isHomeRouteMounted={homeRouteMounted}/>
           <div className={classes.MainContainer}>
             {this.onRenderDisplayCarousel()}
             {this.popularRestaurantsView()}
             {this.onRenderDisplayRestaurants()}
             <Counter pageChangeFunction={this.getActivePage} />
           </div>
-          <Footer />
+          {loadFooter && <Footer />}
         </div>
       </>
     )

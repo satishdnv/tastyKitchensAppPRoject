@@ -33,7 +33,7 @@
   padding: 0;
   align-items: center;
 }
-.NavBar nav ul li {
+.NavBar .li1 {
   font-size: 20px;
   text-decoration: none;
   display: inline-block;
@@ -42,7 +42,16 @@
   color: #334155;
   font-family: DM Sans;
   font-weight: 600;
-  
+}
+.NavBar .li2 {
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1vw;
+  margin-top: 3px;
+  color: #f7931e;
+  font-family: DM Sans;
+  font-weight: 600;
 }
 .LogoutButton {
   height: 32px;
@@ -112,7 +121,7 @@
     box-shadow: 1px 1px 5px 2px #ccc;
     border-top-left-radius: 5px;
   }
-  .NavBar nav ul li {
+  .NavBar .li1 {
     font-size: 20px;
     text-decoration: none;
     padding-left: 25px;
@@ -120,12 +129,25 @@
     margin-top: 6px;
     font-weight: 500;
   }
+  .NavBar .li2 {
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 25px;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    font-weight: 500;
+    color: #f7931e;
+  }
   .NavBar {
     opacity: 1;
   }
   .NavBar a:hover {
     border-bottom: none;
     color: green;
+  }
+  .LogoutButton {
+    margin-left: 12px;
+    margin-top: 10px;
   }
 }
 @media screen and (min-width: 750px) {

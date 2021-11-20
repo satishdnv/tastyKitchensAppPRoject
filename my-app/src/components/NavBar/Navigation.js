@@ -1,10 +1,12 @@
 import NavLinks from './NavLinks'
 import classes from './NavBar.Module.css'
 
-const Navigation = () => (
+const Navigation = (props) => {
+  const {isHomeRouteMounted,isCartRouteMounted}=props
+  return(
   <nav className={classes.Navigation}>
-    <NavLinks />
+    <NavLinks  isHomeRouteMounted={isHomeRouteMounted} isCartRouteMounted={isCartRouteMounted}/>
   </nav>
-)
+)}
 
 export default Navigation

@@ -5,7 +5,8 @@ import {useState} from 'react'
 import classes from './NavBar.Module.css'
 import NavLinks from './NavLinks'
 
-const MobileNavigation = () => {
+const MobileNavigation = (props) => {
+  const {isHomeRouteMounted,isCartRouteMounted}=props
   const [open, setOpen] = useState(false)
 
   const hamburgerIcon = (
@@ -27,7 +28,7 @@ const MobileNavigation = () => {
   return (
     <nav className={classes.MobileNavigation}>
       {open ? closeIcon : hamburgerIcon}
-      {open && <NavLinks isMobile="true" closeMobileMenu={closeMobileMenu} />}
+      {open && <NavLinks isMobile="true" closeMobileMenu={closeMobileMenu} isHomeRouteMounted={isHomeRouteMounted} isCartRouteMounted={isCartRouteMounted}/>}
     </nav>
   )
 }

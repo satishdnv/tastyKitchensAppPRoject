@@ -19,6 +19,7 @@ class RestaurantDetailsRoute extends Component {
   state = {
     apiStatus: restaurantsApiStatusConstants.initial,
     restaurantData: [],
+    loadFooter:false
   }
 
   // component did mount method
@@ -84,7 +85,7 @@ class RestaurantDetailsRoute extends Component {
       const convertedData = this.convertData(data)
       this.setState({
         apiStatus: restaurantsApiStatusConstants.success,
-        restaurantData: convertedData,
+        restaurantData: convertedData,loadFooter:true
       })
     }
   }
@@ -192,12 +193,13 @@ class RestaurantDetailsRoute extends Component {
     /* const {match} = this.props
     const {params} = match
     const {id} = params */
+    const{loadFooter}=this.state
     return (
       <>
         <div className={restaurantClass.BackgroundContainer}>
           <NavBar />
           {this.onRenderDisplayRestaurantDetails()}
-          <Footer />
+          {loadFooter && <Footer />}
         </div>
       </>
     )

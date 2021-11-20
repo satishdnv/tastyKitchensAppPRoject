@@ -14,13 +14,19 @@ const NavLinks = props => {
     console.log(1)
   } */
 
+  const {isHomeRouteMounted,isCartRouteMounted}=props
+  
+
+  const homeClass=isHomeRouteMounted?classes.li1:classes.li2
+  const cartClass=isCartRouteMounted?classes.li1:classes.li2
+
   return (
     <ul>
       <Link to="/">
-        <li onClick={() => props.isMobile && props.closeMobileMenu()}>Home</li>
+        <li onClick={() => props.isMobile && props.closeMobileMenu()} className={homeClass}>Home</li>
       </Link>
       <Link to="/cart">
-        <li onClick={() => props.isMobile && props.closeMobileMenu()}>Cart</li>
+        <li onClick={() => props.isMobile && props.closeMobileMenu()} className={cartClass}>Cart</li>
       </Link>
       <li onClick={() => props.isMobile && props.closeMobileMenu()}>
         <button
