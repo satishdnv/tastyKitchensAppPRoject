@@ -6,10 +6,12 @@ import NotFoundClass from './NotFound.module.css'
 const notFoundUrl =
   'https://res.cloudinary.com/dppqkea7f/image/upload/v1625830262/NotFound_kpncbm.png'
 const NotFound = props => {
-  /* const navigateToHome = () => {
+  // console.log(props)
+  const navigateToHome = () => {
+    // console.log(props)
     const {history} = props
     history.replace ('/')
-  } */
+  } 
   console.log(null)
   return (
     <div className={NotFoundClass.BackgroundContainer}>
@@ -21,7 +23,7 @@ const NotFound = props => {
           we are sorry, the page you requested could not be found. Please go
           back to the homepage
         </p>
-        <button type="button" className={NotFoundClass.Button}>
+        <button type="button" className={NotFoundClass.Button} onClick={navigateToHome}>
           Home Page
         </button>
       </div>
